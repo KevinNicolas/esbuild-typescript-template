@@ -1,0 +1,20 @@
+{
+  "name": "esbuild-typescript-template",
+  "version": "0.0.0",
+  "description": "template for typescript project",
+  "main": "index.js",
+  "author": "Kevin-Leguiza-Gaggero",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "dev": "nodemon -e ts -x 'npm run build && clear && npm run init' -i 'node_modules'",
+    "init": "node ./dist/bundle.js",
+    "start": "npm run build && npm run init"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "esbuild": "^0.14.47",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.7.4"
+  }
+}
