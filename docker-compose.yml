@@ -1,0 +1,29 @@
+version: '1.0.0'
+
+services:
+  app:
+    container_name: name-of-container
+    build: 
+      context: .
+      args:
+        GITUSERNAME: Kevin-Leguiza-Gaggero
+        GITEMAIL: nicolaskevinleguiza@gmail.com
+        SSHFILENAME: docker-key
+        # SSHFILENAME: id_rsa
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    tty: true
+  
+  postgres:
+    container_name: name-of-container-db
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5000:5432
+
